@@ -76,7 +76,7 @@ src_install() {
 	ln -s libGLU.so.1.3 ${D}usr/autodesk/maya2018-x64/lib/libGLU.so.1 # If the systemwide libGLU isn't present, maya has it's own
 
 	mkdir -p ${D}usr/bin/
-	ln -s /usr/autodesk/maya2018-x64/bin/maya2012 ${D}usr/bin/maya
+	ln -s /usr/autodesk/maya2018-x64/bin/maya2018 ${D}usr/bin/maya
 	ln -s /usr/autodesk/maya2018-x64/bin/Render   ${D}usr/bin/Render
 	ln -s /usr/autodesk/maya2018-x64/bin/fcheck   ${D}usr/bin/fcheck
 	ln -s /usr/autodesk/maya2018-x64/bin/imgcvt   ${D}usr/bin/imgcvt
@@ -103,7 +103,7 @@ pkg_postinst() {
 	einfo
 	einfo
 	einfo "And then you need to run this as root to activate your license:"
-	einfo " # LD_LIBRARY_PATH=/opt/Autodesk/Adlm/R4/lib64 /usr/autodesk/maya2018-x64/bin/adlmreg -i S 657D1 657D1 2012.0.0.F <your serial number> /var/opt/Autodesk/Adlm/Maya2018/MayaConfig.pit"
+	einfo " # LD_LIBRARY_PATH=/opt/Autodesk/Adlm/R4/lib64 /usr/autodesk/maya2018-x64/bin/adlmreg -i S 657D1 657D1 2018.0.0.F <your serial number> /var/opt/Autodesk/Adlm/Maya2018/MayaConfig.pit"
 	einfo
 	einfo
 	einfo "If you have a network license you need to do this:"
@@ -117,7 +117,7 @@ pkg_postinst() {
 	einfo
 	einfo
 	einfo "The file: /var/opt/Autodesk/Adlm/.config/ProductInformation.pit shuld be possible to pass around between computers for shared licenses. I don't know what it does."
-	einfo "The file: /var/opt/Autodesk/Adlm/Maya2012/install.env seems to be created by the ./setup program and contains the license info, I don't know if that's whats needed to get license running without running ./setup program"
+	einfo "The file: /var/opt/Autodesk/Adlm/Maya2018/install.env seems to be created by the ./setup program and contains the license info, I don't know if that's whats needed to get license running without running ./setup program"
 }
 
 pkg_postrm() {
